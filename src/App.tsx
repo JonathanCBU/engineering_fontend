@@ -1,13 +1,15 @@
-import '@mantine/core/styles.css';
+import { useState } from "react";
+import "./App.css";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 
-import { MantineProvider } from '@mantine/core';
-import { Router } from './Router';
-import { theme } from './theme';
+const theme = createTheme({});
 
-export default function App() {
+const App = () => {
   return (
-    <MantineProvider theme={theme}>
-      <Router />
-    </MantineProvider>
+    <ThemeProvider theme={theme}>
+      <div>Hello World</div>
+    </ThemeProvider>
   );
-}
+};
+
+export default App;
