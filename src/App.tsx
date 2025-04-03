@@ -14,7 +14,7 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route element={<Layout />}>
-            <Route path='home' element={<HomePage />} />
+            <Route path='/' element={<HomePage />} />
             <Route path='timer' element={<Pomodoro />} />
           </Route>
         </Routes>

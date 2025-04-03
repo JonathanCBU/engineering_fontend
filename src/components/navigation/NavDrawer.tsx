@@ -5,24 +5,40 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import { Link } from 'react-router-dom';
+import { Toolbar } from '@mui/material';
 
 const drawerItems = [
   {
     text: 'Home',
-    path: '/home',
+    path: '/',
   },
   { text: 'Timer', path: '/timer' },
 ];
 
-const NavDrawer = () => {
+interface NavDrawerProps {
+  open: boolean;
+  drawerWidth: string;
+}
+
+const NavDrawer = ({ open, drawerWidth }: NavDrawerProps) => {
   return (
     <Box>
-      <Drawer open variant='persistent'>
+      <Drawer
+        open={open}
+        variant='persistent'
+        sx={{
+          '& .MuiDrawer-paper': {
+            boxSizing: 'border-box',
+            width: drawerWidth,
+          },
+        }}
+      >
+        <Toolbar />
         <List>
           {drawerItems.map((item) => (
             <ListItem key={item.text} disablePadding>
               <ListItemButton>
-                <Link to={item.path}>
+                <Link to={item.path} style={{ width: '100%' }}>
                   <ListItemText primary={item.text} />
                 </Link>
               </ListItemButton>
