@@ -8,7 +8,10 @@ on:
 jobs:
   tag-version-checks:
     runs-on: ubuntu-latest
-    steps:
+    steps:      
+      - name: Checkout code
+        uses: actions/checkout@v3
+
       - name: Get current package version
         uses: martinbeentjes/npm-get-version-action@v1.3.1
 
