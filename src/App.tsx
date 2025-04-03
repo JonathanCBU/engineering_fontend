@@ -5,7 +5,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import theme from './style/theme';
 import Layout from './components/navigation/Layout';
 import HomePage from './pages/home/HomePage';
-import Pomodoro from './pages/timer/Pomodoro';
+import Pomodoro from "./pages/timer/Pomodoro";
 
 const App = () => {
   return (
