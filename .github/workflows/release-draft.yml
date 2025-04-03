@@ -2,19 +2,19 @@ name: On New Release/Tag
 
 on:
   push
-    # branches:
-    #   - 'release/**'
+  # branches:
+  #   - 'release/**'
 
 jobs:
   tag-version-checks:
     runs-on: ubuntu-latest
-  steps:
-    - name: Get current package version
-      uses: martinbeentjes/npm-get-version-action@v1.3.1
+    steps:
+      - name: Get current package version
+        uses: martinbeentjes/npm-get-version-action@v1.3.1
 
-    - name: print
-      run: |
-        echo ${{ steps.package-version.outputs.current-version}}
+      - name: print
+        run: |
+          echo ${{ steps.package-version.outputs.current-version}}
     # - name: Create draft release
     #   uses: ncipollo/release-action@v1
     #   with:
