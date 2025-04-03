@@ -1,5 +1,15 @@
+import NavDrawer from './NavDrawer';
+import { Outlet } from 'react-router-dom';
+
 const Layout = () => {
-  return <div>Layout</div>;
+  return (
+    <>
+      <NavDrawer />
+      <main>
+        <Outlet />
+      </main>
+    </>
+  );
 };
 
 export default Layout;
