@@ -12,18 +12,18 @@ const drawerItems = [
     text: 'Home',
     path: '/',
   },
+  {
+    text: 'Career',
+    path: '/career',
+  },
   { text: 'Timer', path: '/timer' },
 ];
 
-interface NavDrawerProps {
-  open: boolean;
-}
-
-const NavDrawer = ({ open }: NavDrawerProps) => {
+const NavDrawer = () => {
   return (
     <Box>
       <Drawer
-        open={open}
+        open
         variant='persistent'
         sx={{
           '& .MuiDrawer-paper': {

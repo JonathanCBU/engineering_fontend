@@ -6,6 +6,7 @@ import theme from './style/theme';
 import Layout from './components/navigation/Layout';
 import HomePage from './pages/home/HomePage';
 import Pomodoro from './pages/timer/Pomodoro';
+import CareerPage from './pages/career/CareerPage';
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
           <Route element={<Layout />}>
             <Route path='/' element={<HomePage />} />
             <Route path='timer' element={<Pomodoro />} />
+            <Route path='career' element={<CareerPage />} />
           </Route>
         </Routes>
       </BrowserRouter>
