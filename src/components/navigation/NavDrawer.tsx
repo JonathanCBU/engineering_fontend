@@ -17,10 +17,9 @@ const drawerItems = [
 
 interface NavDrawerProps {
   open: boolean;
-  drawerWidth: string;
 }
 
-const NavDrawer = ({ open, drawerWidth }: NavDrawerProps) => {
+const NavDrawer = ({ open }: NavDrawerProps) => {
   return (
     <Box>
       <Drawer
@@ -29,7 +28,6 @@ const NavDrawer = ({ open, drawerWidth }: NavDrawerProps) => {
         sx={{
           '& .MuiDrawer-paper': {
             boxSizing: 'border-box',
-            width: drawerWidth,
           },
         }}
       >
