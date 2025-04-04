@@ -2,6 +2,7 @@ import { AppShell, Burger, Group } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { HomePage } from './pages/Home.page';
 import NavBar from './components/NavBar/NavBar';
+import { Outlet } from 'react-router-dom';
 
 const AppLayout = () => {
   const [mobileOpened, { toggle: toggleMobile }] = useDisclosure();
@@ -37,7 +38,7 @@ const AppLayout = () => {
         <NavBar />
       </AppShell.Navbar>
       <AppShell.Main>
-        <HomePage />
+        <Outlet />
       </AppShell.Main>
     </AppShell>
   );

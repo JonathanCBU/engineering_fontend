@@ -3,7 +3,15 @@ import { NavLink, Container } from '@mantine/core';
 const NavBar = () => {
   return (
     <Container>
-      {Array(15)
+      <NavLink
+        label='Home'
+        href='/home'
+      />
+      <NavLink
+        label='Career'
+        href='career'
+      />
+      {/* {Array(15)
         .fill(0)
         .map((_, index) => (
           <NavLink
@@ -12,7 +20,7 @@ const NavBar = () => {
             component='a'
             href='#'
           />
-        ))}
+        ))} */}
     </Container>
   );
 };
