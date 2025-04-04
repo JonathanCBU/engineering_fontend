@@ -7,6 +7,7 @@ import Starry from './tabs/Starry';
 import Silvertree from './tabs/Silvertree';
 import Qt from './tabs/Qt';
 import Arpari from './tabs/Arpari';
+import Box from '@mui/material/Box'
 
 const CareerPage = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -25,10 +26,10 @@ const CareerPage = () => {
   ];
 
   return (
-    <>
+    <Box sx={{ width: '100%'}}>
       <Tabs value={currentIndex} onChange={handleChange}>
         {tabComponents.map((tab) => (
-          <Tab label={tab.type.name} />
+          <Tab label={tab.type.name} key={tab.type.name}/>
         ))}
       </Tabs>
 
@@ -37,7 +38,7 @@ const CareerPage = () => {
           {tab}
         </TabPanel>
       ))}
-    </>
+    </Box>
   );
 };
 
