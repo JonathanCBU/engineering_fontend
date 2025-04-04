@@ -1,28 +1,13 @@
-import './App.css';
-import { ThemeProvider } from '@mui/material/styles';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import CssBaseline from '@mui/material/CssBaseline';
-import theme from './style/theme';
-import Layout from './components/navigation/Layout';
-import HomePage from './pages/home/HomePage';
-import Pomodoro from './pages/timer/Pomodoro';
-import CareerPage from './pages/career/CareerPage';
+import '@mantine/core/styles.css';
 
-const App = () => {
+import { MantineProvider } from '@mantine/core';
+import { Router } from './Router';
+import { theme } from './theme';
+
+export default function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <BrowserRouter>
-        <Routes>
-          <Route element={<Layout />}>
-            <Route path='/' element={<HomePage />} />
-            <Route path='timer' element={<Pomodoro />} />
-            <Route path='career' element={<CareerPage />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
-    </ThemeProvider>
+    <MantineProvider theme={theme}>
+      <Router />
+    </MantineProvider>
   );
-};
-
-export default App;
+}
