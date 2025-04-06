@@ -1,12 +1,13 @@
-import { AppShell, Burger, Group } from '@mantine/core';
+import { AppShell } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import { HomePage } from './pages/Home.page';
 import NavBar from './components/NavBar/NavBar';
+import Header from './components/Header/Header';
 import { Outlet } from 'react-router-dom';
 
 const AppLayout = () => {
-  const [mobileOpened, { toggle: toggleMobile }] = useDisclosure();
   const [desktopOpened, { toggle: toggleDesktop }] = useDisclosure(true);
+
+  console.log(window.navigator.userAgent);
 
   return (
     <AppShell
@@ -14,25 +15,12 @@ const AppLayout = () => {
       navbar={{
         width: 300,
         breakpoint: 'sm',
-        collapsed: { mobile: !mobileOpened, desktop: !desktopOpened },
+        collapsed: { desktop: !desktopOpened },
       }}
       padding='md'
     >
       <AppShell.Header>
-        <Group h='100%' px='md'>
-          <Burger
-            opened={mobileOpened}
-            onClick={toggleMobile}
-            hiddenFrom='sm'
-            size='sm'
-          />
-          <Burger
-            opened={desktopOpened}
-            onClick={toggleDesktop}
-            visibleFrom='sm'
-            size='sm'
-          />
-        </Group>
+        <Header opened={desktopOpened} toggle={toggleDesktop} />
       </AppShell.Header>
       <AppShell.Navbar p='md'>
         <NavBar />
