@@ -10,7 +10,6 @@ const Header = ({ opened, toggle }: HeaderProps) => {
   const { colorScheme, setColorScheme } = useMantineColorScheme();
 
   const toggleColorScheme = (event: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(colorScheme);
     if (event.target.checked) {
       setColorScheme('light');
     } else {
@@ -28,7 +27,7 @@ const Header = ({ opened, toggle }: HeaderProps) => {
         onLabel={<IconSun size={16} />}
         offLabel={<IconMoonStars size={16} />}
         size='lg'
-        onChange={(event) => toggleColorScheme(event)}
+        onChange={toggleColorScheme}
       />
     </Group>
   );

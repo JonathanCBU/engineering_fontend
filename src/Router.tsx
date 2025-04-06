@@ -2,7 +2,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { HomePage } from './pages/Home.page';
 import AppLayout from './AppLayout';
 import CareerPage from './pages/CareerPage';
-import TimerPage from './pages/TimerPage';
+import TimerPage from './pages/TimerPage/TimerPage';
 
 const router = createBrowserRouter([
   {
