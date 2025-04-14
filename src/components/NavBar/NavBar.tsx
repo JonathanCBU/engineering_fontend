@@ -1,6 +1,6 @@
 import { NavLink, Container } from '@mantine/core';
 
-const NavBar = () => {
+const NavBar = (): React.JSX.Element => {
   return (
     <Container>
       <NavLink label='Home' href='/' />

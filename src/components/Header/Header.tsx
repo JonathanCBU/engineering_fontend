@@ -1,12 +1,8 @@
 import { Burger, Group, Switch, useMantineColorScheme } from '@mantine/core';
 import { IconSun, IconMoonStars } from '@tabler/icons-react';
+import { HeaderProps } from '@/types/layoutTypes';
 
-interface HeaderProps {
-  opened: boolean;
-  toggle: () => void;
-}
-
-const Header = ({ opened, toggle }: HeaderProps) => {
+const Header = ({ opened, toggle }: HeaderProps): React.JSX.Element => {
   const { setColorScheme } = useMantineColorScheme();
 
   const toggleColorScheme = (event: React.ChangeEvent<HTMLInputElement>) => {

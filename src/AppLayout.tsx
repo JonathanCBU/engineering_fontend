@@ -1,10 +1,10 @@
+import Header from '@/components/Header/Header';
+import NavBar from '@/components/NavBar/NavBar';
 import { AppShell } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import NavBar from './components/NavBar/NavBar';
-import Header from './components/Header/Header';
 import { Outlet } from 'react-router-dom';
 
-const AppLayout = () => {
+const AppLayout = (): React.JSX.Element => {
   const [desktopOpened, { toggle: toggleDesktop }] = useDisclosure(true);
 
   return (

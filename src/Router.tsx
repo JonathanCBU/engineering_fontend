@@ -1,8 +1,7 @@
+import AppLayout from '@/AppLayout';
+import CareerPage from '@/pages/Career/CareerPage';
+import HomePage from '@/pages/Home/HomePage';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import HomePage from './pages/Home/HomePage';
-import AppLayout from './AppLayout';
-import CareerPage from './pages/Career/CareerPage';
-import TimerPage from './pages/TimerPage/TimerPage';
 
 const router = createBrowserRouter([
   {
@@ -24,15 +23,12 @@ const router = createBrowserRouter([
         element: <CareerPage />,
         errorElement: <div>Oops! Something went wrong.</div>,
       },
-      {
-        path: 'timer',
-        element: <TimerPage />,
-        errorElement: <div>Oops! Something went wrong.</div>,
-      },
     ],
   },
 ]);
 
-export function Router() {
+const Router = (): React.JSX.Element => {
   return <RouterProvider router={router} />;
-}
+};
+
+export default Router;

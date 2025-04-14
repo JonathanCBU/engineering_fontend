@@ -1,5 +1,6 @@
 import classes from './HomePage.module.css';
-import { Text } from '@mantine/core';
+import { Text, Image, Stack } from '@mantine/core';
+import goofy from '@/assets/images/goofy.jpeg';
 
 const personalSummary =
   'Originally from the Greater Boston Area, now located in Brooklyn, New York I \
@@ -10,7 +11,12 @@ const personalSummary =
   to problems is a skill set I can apply to improve any product in any industry.';
 
 const HomePage = (): React.JSX.Element => {
-  return <Text>{personalSummary}</Text>;
+  return (
+    <Stack>
+      <Image src={goofy} />
+      <Text>{personalSummary}</Text>;
+    </Stack>
+  );
 };
 
 export default HomePage;

@@ -53,7 +53,7 @@ const positions = [
   },
 ];
 
-const CareerPage = () => {
+const CareerPage = (): React.JSX.Element => {
   return (
     <Accordion>
       {positions.map((pos) => {

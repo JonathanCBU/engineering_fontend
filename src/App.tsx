@@ -1,13 +1,15 @@
 import '@mantine/core/styles.css';
 
+import Router from '@/Router';
+import { theme } from '@/theme';
 import { MantineProvider } from '@mantine/core';
-import { Router } from './Router';
-import { theme } from './theme';
 
-export default function App() {
+const App = (): React.JSX.Element => {
   return (
     <MantineProvider theme={theme}>
       <Router />
     </MantineProvider>
   );
-}
+};
+
+export default App;
