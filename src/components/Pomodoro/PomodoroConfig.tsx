@@ -10,18 +10,19 @@ import {
 } from '@mantine/core';
 import classes from './Pomodoro.module.css';
 import { PomodoroConfigProps } from '@/types/pomodoroTypes';
+import { formatReadableInt } from '@/utils/formatting';
 
 const PomodoroConfig: React.FC<PomodoroConfigProps> = ({
   timerConfig,
   setTimerConfig,
-  isVairedBreakTime,
-  setIsVairedBreakTime,
+  isVariedBreakTime,
+  setisVariedBreakTime,
   timerIsRunning,
 }) => {
   const toggleVairedBreakTime = (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
-    setIsVairedBreakTime(event.currentTarget.checked);
+    setisVariedBreakTime(event.currentTarget.checked);
   };
 
   const handleTimerConfigChange = (value: string | number, key: string) => {
@@ -31,25 +32,8 @@ const PomodoroConfig: React.FC<PomodoroConfigProps> = ({
     }));
   };
 
-  const formatReadableInt = (value: number) => {
-    if (value == 1) {
-      return `${value}st`;
-    }
-
-    if (value == 2) {
-      return `${value}nd`;
-    }
-
-    if (value == 3) {
-      return `${value}rd`;
-    }
-
-    return `${value}th`;
-  };
-
   const commonNumberInputProps = {
     allowDecimal: false,
-    allowNegavtive: false,
     min: 1,
     max: 120,
   };
@@ -72,17 +56,19 @@ const PomodoroConfig: React.FC<PomodoroConfigProps> = ({
             label='Pomodoro Time (minutes)'
             value={timerConfig.focusTime}
             onChange={(event) => handleTimerConfigChange(event, 'focusTime')}
+            allowNegative={false}
             {...commonNumberInputProps}
           />
           <NumberInput
-            label={(isVairedBreakTime ? 'Short ' : '') + 'Break Time (minutes)'}
+            label={(isVariedBreakTime ? 'Short ' : '') + 'Break Time (minutes)'}
             value={timerConfig.shortBreakTime}
             onChange={(event) =>
               handleTimerConfigChange(event, 'shortBreakTime')
             }
+            allowNegative={false}
             {...commonNumberInputProps}
           />
-          {isVairedBreakTime && (
+          {isVariedBreakTime && (
             <Stack>
               <NumberInput
                 label='Long Break Time (minutes)'
@@ -90,6 +76,7 @@ const PomodoroConfig: React.FC<PomodoroConfigProps> = ({
                 onChange={(event) =>
                   handleTimerConfigChange(event, 'longBreakTime')
                 }
+                allowNegative={false}
                 {...commonNumberInputProps}
               />
               <Text>{`Every ${formatReadableInt(timerConfig.longBreakCadence)} break is a long break`}</Text>

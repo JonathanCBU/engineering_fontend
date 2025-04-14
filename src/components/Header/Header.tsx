@@ -7,7 +7,7 @@ interface HeaderProps {
 }
 
 const Header = ({ opened, toggle }: HeaderProps) => {
-  const { colorScheme, setColorScheme } = useMantineColorScheme();
+  const { setColorScheme } = useMantineColorScheme();
 
   const toggleColorScheme = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.checked) {
@@ -22,7 +22,6 @@ const Header = ({ opened, toggle }: HeaderProps) => {
       <Burger opened={opened} onClick={toggle} hiddenFrom='sm' size='sm' />
       <Burger opened={opened} onClick={toggle} visibleFrom='sm' size='sm' />
       <Switch
-        label={`Color scheme: ${colorScheme}`}
         labelPosition='left'
         onLabel={<IconSun size={16} />}
         offLabel={<IconMoonStars size={16} />}

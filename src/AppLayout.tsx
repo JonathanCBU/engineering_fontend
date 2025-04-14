@@ -7,8 +7,6 @@ import { Outlet } from 'react-router-dom';
 const AppLayout = () => {
   const [desktopOpened, { toggle: toggleDesktop }] = useDisclosure(true);
 
-  console.log(window.navigator.userAgent);
-
   return (
     <AppShell
       header={{ height: 60 }}
