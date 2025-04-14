@@ -9,8 +9,11 @@ const stBullets = [
   'Led weekly bug triage meetings and regular bug backlog with JIRA',
 ];
 
+const stStory =
+  "I joined Silvertree in December of 2022 fresh after a 50% tenure-based RIF from Starry, my previous employer. Silvertree was a very natural progression from my role at Starry. The company was working on a wrist wearable to help inspire confidence in active older adults. I joined as the first (and only) automated system test engineer. I leveraged my radio testing experinence at Starry to build a test rig for debugging and benchmarking the device's connecivity and battery comsumption. Throughout the project I was largely on my own, and I got to really stretch my legs as a generic engineer for the first time. I learned how to package a test framework in a docker container, I sourced radio circuit components and RaspberryPis to execute tests, I learned how to use Github Actions for nightly firmware tests and builds, and I even built a Zephyr RTOS API for handling button presses on the wearable.";
+
 const Silvertree = (): React.JSX.Element => {
-  return <Resume bullets={stBullets} story='' imageRef='' />;
+  return <Resume bullets={stBullets} story={stStory} imageRef='' />;
 };
 
 export default Silvertree;
