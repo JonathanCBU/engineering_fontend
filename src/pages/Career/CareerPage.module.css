@@ -1,0 +1,13 @@
+.dateText {
+  font-style: italic;
+  color: dimgray;
+  margin-right: 15px;
+}
+
+.tabText {
+  justify-self: center;
+}
+
+.accordionGroup {
+  justify-content: space-between;
+}
