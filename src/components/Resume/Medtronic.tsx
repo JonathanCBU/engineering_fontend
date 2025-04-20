@@ -30,7 +30,7 @@ const mdtStory =
   engineer, and I was very nervous to leave my role there for Starry when the time came.";
 
 const Medtronic = (): React.JSX.Element => {
-  return <Resume bullets={mdtBullets} story={mdtStory} imageRef='' />;
+  return <Resume bullets={mdtBullets} story={''} imageRef='' />;
 };
 
 export default Medtronic;

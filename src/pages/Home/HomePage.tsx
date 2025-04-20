@@ -1,6 +1,5 @@
 import classes from './HomePage.module.css';
-import { Text, Image, Stack, Group } from '@mantine/core';
-import goofy from '@/assets/images/goofy.jpeg';
+import { Text, Stack, } from '@mantine/core';
 
 const personalSummary = [
   "Originally from the Greater Boston Area and now based in Brooklyn, I'm a software engineer who thrives at the intersection of technical expertise and big-picture thinking. Throughout my five-year career spanning surgical robotics, wireless communications, wearables, SaaS, and fintech, I've developed a knack for quickly adapting to new domains and technologies. ",
@@ -11,9 +10,6 @@ const personalSummary = [
 const HomePage = (): React.JSX.Element => {
   return (
     <Stack>
-      <Group className={classes.imageGroup}>
-        <Image className={classes.image} src={goofy} fit='scale-down' />
-      </Group>
       {personalSummary.map((paragraph) => {
         return <Text>{paragraph}</Text>;
       })}

@@ -32,7 +32,7 @@ daunting, but I knew I was still early in my career, and surrounded by supportiv
 hunt began again...";
 
 const Starry = (): React.JSX.Element => {
-  return <Resume bullets={starryBullets} story={starryStory} imageRef='' />;
+  return <Resume bullets={starryBullets} story={''} imageRef='' />;
 };
 
 export default Starry;

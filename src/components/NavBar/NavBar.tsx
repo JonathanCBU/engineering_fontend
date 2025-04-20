@@ -5,7 +5,6 @@ const NavBar = (): React.JSX.Element => {
     <Container>
       <NavLink label='Home' href='/' />
       <NavLink label='Career' href='career' />
-      <NavLink label='Timer' href='timer' />
     </Container>
   );
 };
