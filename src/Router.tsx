@@ -1,6 +1,7 @@
 import AppLayout from '@/AppLayout';
 import CareerPage from '@/pages/Career/CareerPage';
 import HomePage from '@/pages/Home/HomePage';
+import TransactionsPage from '@/pages/Transactions/TransactionsPage';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 const router = createBrowserRouter([
@@ -21,6 +22,11 @@ const router = createBrowserRouter([
       {
         path: 'career',
         element: <CareerPage />,
+        errorElement: <div>Oops! Something went wrong.</div>,
+      },
+      {
+        path: 'transactions',
+        element: <TransactionsPage />,
         errorElement: <div>Oops! Something went wrong.</div>,
       },
     ],

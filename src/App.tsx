@@ -1,4 +1,5 @@
 import '@mantine/core/styles.css';
+import '@mantine/dates/styles.css';
 
 import Router from '@/Router';
 import { theme } from '@/theme';
