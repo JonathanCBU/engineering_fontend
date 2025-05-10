@@ -26,7 +26,13 @@ const Header = ({ opened, toggle }: HeaderProps): React.JSX.Element => {
 
   return (
     <Group h='100%' px='md' justify='space-between'>
-      <Burger opened={opened} onClick={toggle} hiddenFrom='sm' size='sm' />
+      <Burger
+        opened={opened}
+        onClick={toggle}
+        hiddenFrom='sm'
+        size='sm'
+        data-testid='burger-1'
+      />
       <Burger opened={opened} onClick={toggle} visibleFrom='sm' size='sm' />
       <Group>
         <NavLink
